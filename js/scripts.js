@@ -26,7 +26,15 @@ $(document).ready(function() {
 
   $("input:radio[name=operator]").click(function() {
     $(".remainder").hide();
-    $(".result").show();
+    $(".result").hide();
+  });
+
+  $("input:radio[value=divideRemainder]").click(function() {
+    $(".integerCalcHide").hide();
+  });
+
+  $("input:radio[value!=divideRemainder]").click(function() {
+    $(".integerCalcHide").show();
   });
 
 
@@ -35,8 +43,10 @@ $(document).ready(function() {
     var number2 = parseFloat($("input#number2").val());
     var precision = parseInt($("select#precision").val());
     var operator = $("input:radio[name=operator]:checked").val();
+    $(".result").show();
+    //$(".integerCalcHide").show();
 
-    console.log("Precision: " + precision);  // for debugging
+    //console.log("Precision: " + precision);  // for debugging
     //console.log("2nd number: " + integer2);  // for debugging
     //console.log("operator: " + operator);  // for debugging
 
