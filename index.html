@@ -22,6 +22,15 @@
           <label for="number2">Input another number</label>
           <input id="number2" class="form-control" type="number" placeholder="number here">
         </div>
+        <div class="form-group">
+          <label for="precision">Precision of Output</label>
+          <select class="form-control" id="precision">
+            <option value="1">0.1</option>
+            <option value="2">0.01</option>
+            <option value="3">0.001</option>
+            <option value="4">0.0001</option>
+          </select>
+        </div>
 
         <div class="radio">
           <label><input type="radio" name="operator" value="add">Addition</label>
@@ -43,6 +52,7 @@
     </div>
     <div id="result">
       <p><span class="result"></span></p>
+      <p><span class="remainder"></span></p>
     </div>
   </div>
 </body>

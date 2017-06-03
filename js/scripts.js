@@ -23,18 +23,44 @@ var remainder = function(number1, number2) {
 //this is our user interface
 
 $(document).ready(function() {
+
+  $("input:radio[name=operator]").click(function() {
+    $(".remainder").hide();
+    $(".result").show();
+  });
+
+
   $("#variables form").submit(function(event) {
     var number1 = parseFloat($("input#number1").val());
     var number2 = parseFloat($("input#number2").val());
+    var precision = parseInt($("select#precision").val());
     var operator = $("input:radio[name=operator]:checked").val();
 
-    console.log("1st number: " + number1);  // for debugging
-    console.log("2nd number: " + number2);  // for debugging
-    console.log("operator: " + operator);  // for debugging
+    console.log("Precision: " + precision);  // for debugging
+    //console.log("2nd number: " + integer2);  // for debugging
+    //console.log("operator: " + operator);  // for debugging
 
-    var output =  add(number1, number2);
+    var output;
+    var remainderOutput;
+    if (operator === "add") {
+      output = add(number1, number2);
+    } else if (operator === "subtract") {
+      output = subtract(number1, number2);
+    } else if (operator === "multiply") {
+      output = multiply(number1, number2);
+    } else if (operator === "divide") {
+      output = divide(number1, number2);
 
-    $(".result").text(output);
+    } else if (operator === "divideRemainder") {
+      output = divide(number1, number2);
+      remainderOutput = remainder(number1, number2);
+      $(".remainder").show();
+      $(".result").hide();
+    }
+    var result = output.toPrecision(precision)
+    $(".result").text(result);
+    $(".remainder").text("Quotient: " + parseInt(output) + "   " + "Remainder: " + remainderOutput);
+
     event.preventDefault();
   });
 });

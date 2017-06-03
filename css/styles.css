@@ -5,3 +5,7 @@ padding: 10px;
 #variables {
   padding: 10px;
 }
+
+.remainder {
+  display: none;
+}
