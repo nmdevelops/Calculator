@@ -11,27 +11,28 @@
 
 <body>
   <div class="container">
-
+    <h1>Simple Arithmetic</h1>
     <div id="variables">
       <form>
         <div class="form-group">
-          <label for="number1">Input a number</label>
+          <label for="number1">First Operand</label>
           <input id="number1" class="form-control" type="text" placeholder="number here">
         </div>
         <div class="form-group">
-          <label for="number2">Input another number</label>
+          <label for="number2">Second Operand</label>
           <input id="number2" class="form-control" type="text" placeholder="number here">
         </div>
         <div class="form-group integerCalcHide">
           <label for="precision">Precision of Output</label>
           <select class="form-control" id="precision">
+            <option value="0">Whole Number</option>
             <option value="1">0.1</option>
             <option value="2">0.01</option>
             <option value="3">0.001</option>
             <option value="4">0.0001</option>
           </select>
         </div>
-
+        <label>Operator</label>
         <div class="radio">
           <label><input type="radio" name="operator" value="add">Addition</label>
         </div>
