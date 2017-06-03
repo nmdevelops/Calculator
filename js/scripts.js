@@ -57,7 +57,8 @@ $(document).ready(function() {
       $(".remainder").show();
       $(".result").hide();
     }
-    var result = output.toPrecision(precision)
+    var result = output.toFixed(precision)
+    console.log("result:" + result);
     $(".result").text(result);
     $(".remainder").text("Quotient: " + parseInt(output) + "   " + "Remainder: " + remainderOutput);
 
